@@ -18,6 +18,12 @@ namespace WebApplication2.Infrastructure
             }
             var workbook = new XLWorkbook();
             var worksheet = workbook.Worksheets.Add("Sheet 1");
+            worksheet.Column(1).Width = 10;
+            worksheet.Column(2).Width = 15;
+            worksheet.Column(3).Width = 15;
+            worksheet.Column(4).Width = 25;
+            worksheet.PageSetup.CenterHorizontally = true;
+            worksheet.PageSetup.CenterVertically = true;
             worksheet.Range("A1:I1").Merge()
                 .SetValue("PLANILLA MANUAL DE HORARIOS DE ENTRADA Y SALIDA")
                 .Style.Font.SetBold(true)
